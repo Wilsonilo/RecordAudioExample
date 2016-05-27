@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RecordAudioExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWO-RP-Rz5">
+                                <rect key="frame" x="266" y="285" width="68" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="68" id="4t6-ax-8Va"/>
+                                    <constraint firstAttribute="height" constant="30" id="xI4-pA-zu6"/>
+                                </constraints>
+                                <state key="normal" title="Record"/>
+                                <connections>
+                                    <action selector="ActionRecord:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v4M-Rv-VoB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEJ-LC-4s8">
+                                <rect key="frame" x="266" y="338" width="68" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Et1-8D-CEg"/>
+                                    <constraint firstAttribute="width" constant="68" id="fQU-v7-JKQ"/>
+                                </constraints>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="ActionPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fFd-I6-57K"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MEJ-LC-4s8" firstAttribute="top" secondItem="aWO-RP-Rz5" secondAttribute="bottom" constant="23" id="2pN-gI-CDK"/>
+                            <constraint firstItem="aWO-RP-Rz5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HU6-yv-DnG"/>
+                            <constraint firstItem="MEJ-LC-4s8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gKd-2O-bQ5"/>
+                            <constraint firstItem="aWO-RP-Rz5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="l1X-Pt-v4l"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="ButtonPlay" destination="MEJ-LC-4s8" id="dAQ-4B-gKX"/>
+                        <outlet property="ButttonRecord" destination="aWO-RP-Rz5" id="cGm-Ve-vse"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
